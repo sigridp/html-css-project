@@ -1,0 +1,376 @@
+@charset "UTF-8";
+
+@media screen and (min-width:1200px){
+
+/**************************
+****** BASIS STYLES ******
+**************************/
+    
+h1{
+    font-size: 1.4rem;
+
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+p, a, li{
+    font-size: 1rem;
+}
+
+
+.flexContainer, .container{
+
+margin: 0 8%;
+
+}    
+
+    
+ /************************
+****   HEADINGS      ****
+*************************/
+
+
+header.container h1{
+    background-size: 200px 2px;
+    } 
+    
+/**************************
+*****  CARDS GENERAL ******
+**************************/  
+    
+.card h2{
+    font-size: 1.2rem;
+}
+    
+.card p{
+    font-size: 1rem;
+}
+    
+    
+/*************************
+*****    NAVIGATIE  ******
+**************************/    
+
+body > header{
+
+    height: 12vw;
+}
+
+body > header div div{
+    overflow: hidden;
+    float: left;
+
+}
+
+nav {
+    clear: none;
+    height: 12vw;
+
+}
+
+
+nav ul {
+    padding: 4rem 0;
+    text-align: right;
+
+}
+
+nav ul li a{
+    font-size: 1rem;
+}
+
+nav ul li a:hover{
+    color: #FDB822;
+    transform: scale(1.1);
+    
+}
+    
+/*******************
+**** HERO IMAGE ****
+********************/
+
+#heroImage p:first-of-type{
+    font-size: 2.8rem;
+
+}
+
+#heroImage p+p{
+
+    font-size: 1.8rem;
+}
+
+    
+#heroImage .slider > div:nth-child(1){
+    background-image: url("../images/hero-image-1-large.jpg");
+    
+}
+#heroImage .slider > div:nth-child(2){
+    background-image: url("../images/hero-image-2-large.jpg");
+}
+#heroImage .slider > div:nth-child(3){
+    background-image: url("../images/hero-image-3-large.jpg");
+}
+    
+    
+    
+
+/*************************
+*****    PRODUCTS   ******
+**************************/
+
+/*CAROUSEL*/
+    
+    
+#products .card:nth-child(4),
+#products .card:nth-child(8){
+display: block;
+} 
+
+
+#products .card{
+    width: 20%;
+}
+
+#products img{
+    width: 190%;
+}
+
+#products .card:nth-child(10){
+    order: -1;
+}
+
+
+/* VISIBILITY OVERLAY CARDS */
+
+#products .overlay h2,
+#products .overlay p,
+#products .overlay ul{
+    visibility: hidden;
+
+}
+
+#products .card:hover .overlay{
+    background-color: rgba(253,184,34,0.8);
+}
+
+
+#products .card:hover .overlay,
+#products .card:hover .overlay h2,
+#products .card:hover .overlay p,
+#products .card:hover .overlay ul{
+    
+    visibility:visible ;
+}
+
+#products .card:hover img{
+    opacity: 0.5;
+
+} 
+
+#products .card > div:first-of-type{
+    height: 23vw;
+
+}
+    
+    
+/*VORMGEVING CARDS OVERLAY */
+
+#products .overlay{
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: 10vw;
+    right:0;
+    bottom: 0;
+    left: 0;
+}
+
+#products .overlay h2{
+    font-family:"montserrat-bold", sans-serif;
+    letter-spacing: 0.09em;
+    color: #FFFFFF;
+    text-transform: none;
+    margin: 25% 0 0 0;
+
+}
+
+#products .overlay h2::after{
+    display: none;
+}
+
+#products .overlay p{
+    font-family: "montserrat-regular", sans-serif;
+    color: #FFFFFF;
+    line-height: 2em;
+    top: 50px;
+}
+
+#products .overlay p span{
+   
+    font-family: "opensans-bold", sans-serif;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+#products .overlay ul li::after{
+    content:"";
+}
+
+#products .overlay ul{
+    width: 100%;
+    text-align:center;
+    right: 0;
+    bottom: 0;
+    top: -25px;
+}
+
+#products .overlay ul li{
+    margin: 0 2%;
+ 
+
+}
+
+#products .overlay ul li a{
+    font-size: 0;
+} 
+    
+#products .overlay ul li a span{
+    font-size: 1.5rem;
+    font-family: "fontawesome";
+    color: #FDB822;
+    background-color: #FFFFFF;
+    padding: 0.5em;
+    border: 2px solid #FDB822;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#products .overlay ul li a span:hover{
+    color: #FFFFFF;
+    background-color: #FDB822;
+    border:2px solid #FFFFFF;
+}   
+
+.pagination a:hover{
+    background-color: #FDB822;
+    color: #FFFFFF;
+    
+}  
+    
+/*************************
+*****  TESTIMONIALS  *****
+**************************/
+
+#products blockquote {
+    padding-bottom: 10em;
+
+}
+
+aside{
+    background-size: 100%;
+}
+
+#products ul{
+    right: 8%;
+}
+/*************************
+*****    SERVICES   ******
+**************************/
+    
+#services .card{
+    width: 25%;
+}    
+
+#services .card div:nth-child(2){
+
+    width: 100%;
+}
+
+#services .card div:first-of-type{
+    width: 10vw;
+    height: 10vw;
+}
+#services .card div img{
+    width: 65%;
+    margin: 10% auto;
+}    
+/*************************
+*****   ABOUT      ******
+**************************/
+    
+
+
+main section div.flexContainer{
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    align-items: stretch;
+    position: relative;
+    
+}
+
+main section div img{
+        width: 30%;
+    }
+
+main section div.flexContainer div:nth-child(1){width: 35%;}
+main section div.flexContainer div:nth-child(2){width: 30%;}
+main section div.flexContainer div:nth-child(3){width: 35%;}
+main section div.flexContainer div:nth-child(4){width: 35%;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+ }
+    
+form input[type="email"]{
+    width: 60%;
+    background-color: #333333;
+}
+
+form input[type="submit"]{
+    width: 35%;
+}
+
+
+form input[type="submit"]:hover{
+    background-color: #FDB822;
+    color: #FFFFFF;
+}
+
+form input[type="submit"]:active{
+    transform: scale(0.8);
+}
+
+/*************************
+*****   FOOTER      ******
+**************************/  
+    
+footer .flexContainer{
+    flex-wrap: nowrap;
+
+}
+
+footer div.flexContainer div{
+    padding: 2rem 0 0 0;
+    width: 25%;
+
+
+}
+
+#footerSocMed li:hover::before{
+    border: 2px solid #FDB822;
+    color: #FDB822;
+}
+
+    
+#footerContactUs a:hover{
+    color: #FDB822;
+}    
+/* EINDE MEDIA SCREEN */
+
+}
+
+

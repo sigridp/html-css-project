@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+@media screen and (min-width:1500px){
+
+    
+/**************************
+****** BASIS STYLES ******
+**************************/
+    
+    
+    
+/*************************
+*****    NAVIGATIE  ******
+**************************/
+
+
+
+/*******************
+**** HERO IMAGE ****
+********************/
+
+#heroImage p:first-of-type{
+    font-size: 3rem;
+
+}
+
+#heroImage p+p{
+
+    font-size: 2rem;
+}
+
+
+/*************************
+*****    PRODUCTS   ******
+**************************/
+
+
+    
+#products .card:nth-child(9),
+#products .card:nth-child(10){
+    display: block;
+} 
+
+#products .card > div:first-of-type{
+    height: 20vw;
+}
+
+    
+#products .card{
+    width: 17%;
+}
+
+
+#products .overlay{
+    top: 10vw;
+}
+    
+    
+#products .overlay ul li{
+    margin: 0 4%;
+
+}
+    
+    
+    
+/*************************
+*****  TESTIMONIALS  *****
+**************************/
+    
+aside{
+    height: 20vw;
+}
+
+#products aside div.flexContainer > div{
+    width: 20vw;
+
+
+}
+
+#products blockquote{
+    width: 45vw;
+    font-size: 1.2rem;
+    padding-bottom: 15em;
+}
+
+#products cite{
+    font-size: 1.1rem;
+    top: 15vw;
+    left: 20vw;
+}
+
+    
+/*************************
+*****    SERVICES   ******
+**************************/
+    
+#services .card div:nth-child(2){
+    width: 75%;
+
+}
+
+    
+/*************************
+*****   ABOUT      ******
+**************************/
+    
+   
+
+/*************************
+*****   FOOTER      ******
+**************************/  
+    
+    
+  
+
+
+/* EINDE MEDIA SCREEN */
+
+}
+
+

@@ -1,0 +1,735 @@
+@charset "UTF-8";
+
+/**************************
+****** BASIS STYLES ******
+**************************/
+
+html{
+    font-size: 100%;
+    
+}
+
+h1{
+    
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+h2{
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1rem;
+
+}
+p, a, li{
+    font-family: "montserrat-regular", sans-serif;
+    font-size: 0.8rem;
+}
+
+.container{
+    display: block;
+    margin: 0 5%;
+}
+
+.flexContainer {
+    display: flex;
+    margin: 0 5%;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 1.5rem;
+}
+
+/************************
+****   HEADINGS      ****
+*************************/
+
+
+
+
+header.container h1{
+    font-family: "montserrat-bold", sans-serif;
+    text-transform: uppercase;
+    color: #684F40;
+    background-image:url("../images/bg-lijn.png");
+    background-repeat: no-repeat;
+    background-size: 60px 2px;
+    background-position: bottom center;
+    padding: 1.5em 0;
+    margin: 0 0 1em 0;
+    
+}
+
+
+header.container p{
+    color: #696969;
+    text-align: center;
+    margin: 0 0 1.5em 0;
+    line-height: 1.6em;
+    
+}
+
+/**************************
+*****  CARDS GENERAL ******
+**************************/
+
+
+.card h2{
+    font-family: "opensans-bold", sans-serif;
+    text-transform: uppercase;
+    color: #684F40;
+    padding: 0 0 1em 0;
+    text-align: center;
+
+}
+
+.card h2::after{
+    content:"";
+    display:block;
+    border-bottom: 2px solid #FDB822;
+    width: 75px;
+    margin: 1rem auto 0;
+     
+}
+
+.card p{
+    color: #696969;
+    padding: 0 2em;
+    text-align: center;
+    line-height: 1.2em;
+    letter-spacing: 0.03em;
+
+}
+
+/*************************
+*****    NAVIGATIE  ******
+**************************/
+
+body > header {
+
+    background-color: rgba(255,255,255,0.7);
+    position: fixed;
+    width: 100%;
+    height: 20vw;
+    z-index: 100;
+}
+
+body > header h1{
+    font-size: 0;
+   
+}
+
+body > header img{
+    width: 25vw;
+    padding: 0.5rem;
+
+}
+
+nav{
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden; /* om navigatie verborgen te houden voor menuToggle */
+  
+    /* transitie */
+    transition-property: width,height, opacity;
+    transition-duration: 800ms;
+    transition-timing-function:ease-in-out;
+    height: 0;
+    width: 0;
+    opacity:0;
+    z-index: 100;
+}
+
+nav ul li {
+    display: block;
+}
+
+nav ul li a{
+    border-bottom: 1px solid #333333;
+    font-size: 1rem;
+    background-color: rgba(204,204,204,0.85);
+    display: block;
+    padding: 1em;
+    color:  #333333;
+    
+
+}
+
+
+
+nav ul li a:focus{
+    color: #FDB822;
+
+}
+
+
+/*** toggle menu ***/
+
+
+
+#hamburgerMenu{
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    width: 10%;
+    height: 10%;
+    opacity: 0;
+    z-index: 2;
+}
+
+
+#hamburgerMenu:checked ~ nav {
+    height: 400px;
+    width: 100%;
+    opacity: 1
+}
+
+#menuLabel{
+   display: none;
+}
+
+
+/* hamburger */
+#hamburgerMenu ~ span {
+    
+    display: block;
+    width: 40px;
+    border-bottom: 4px solid #684F40;
+    margin-bottom: 1.5rem;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    z-index: 1;
+}
+#hamburgerMenu ~ span + span{
+    top: 2rem;
+      
+}
+
+#hamburgerMenu ~ span + span + span{
+    top:2.5rem;
+}
+    
+/*roteren bij checked */
+
+#hamburgerMenu:checked ~ span {
+    transform: rotate(45deg) translate(4px, 8px);
+}
+
+#hamburgerMenu:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#hamburgerMenu:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(2px, -8px);
+}
+
+
+
+/*************************
+*****   HERO-IMAGE   *****
+**************************/
+@keyframes heroImageSlider{
+    0%      {left: 0px; opacity:0;} /*startpunt*/
+    1%      {left: 0px; opacity:1;} /*verschijnt*/
+    31.33%  {left: 0px; opacity:1;} /*toont*/
+    32.33%  {left: 0px; opacity:0;} /*verdwijnt*/
+    33.33%  {left: -100vw; opacity:0;} /*verplaatst*/
+    34.33%  {left: -100vw; opacity:1;} /*verschijnt*/
+    64.66%  {left: -100vw; opacity:1;} /*toont*/
+    65.66%  {left: -100vw; opacity:0;} /*verdwijnt*/
+    66.66%  {left: -200vw; opacity:0;} /*verplaatst*/
+    67.66%  {left: -200vw; opacity:1;} /*verschijnt*/
+    97.99%  {left: -200vw; opacity:1;} /*toont*/
+    98.99%  {left: -200vw; opacity:0;} /*verdwijnt*/
+    100%    {left: 0vw; opacity:0;}    /*versplaatst*/
+
+}
+
+#heroImage{
+    width: 100vw;
+    height: 50vw;
+    position: relative;
+    overflow: hidden;
+   
+}
+#heroImage .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300vw;
+    height: 50vw;
+    
+    animation-name: heroImageSlider;
+    animation-delay: 0s;
+    animation-duration: 24s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   
+}
+
+#heroImage .slider div{
+    float: left;
+    width: 100vw;
+    height: 50vw;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   
+}
+
+#heroImage .slider > div:nth-child(1){
+    background-color: #333333; /* FALLBACK*/
+    background-image: url("../images/hero-image-1-small.jpg");
+    
+}
+#heroImage .slider > div:nth-child(2){
+    background-color: #333333; /* FALLBACK*/
+    background-image: url("../images/hero-image-2-small.jpg");
+}
+#heroImage .slider > div:nth-child(3){
+    background-color: #333333; /* FALLBACK*/
+    background-image: url("../images/hero-image-3-small.jpg");
+}
+
+
+
+#heroImage .flexContainer{
+    justify-content: flex-end;
+    align-items: center;
+    height: 50vw;
+    padding-bottom: 2rem;
+    margin: 0 0;
+}
+
+    
+#heroImage p{
+    color: #FFFFFF;
+    text-shadow: 2px 2px rgba(0,0,0,0.5);
+    padding: 0.5em 0;
+    z-index: 10;
+}
+
+#heroImage p:first-of-type{
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    
+}
+
+#heroImage p+p{
+    font-family: "opensans-light", sans-serif;
+    letter-spacing: 0.09em;
+    
+    
+}
+
+/*************************
+*****    PRODUCTS   ******
+**************************/
+
+/*CAROUSEL*/
+#products{
+    border-top: 2px solid #684F40;
+}
+
+#products div.flexContainer{
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#products .card{
+    width: 50%;
+    position:relative;
+    overflow: hidden;
+    padding: 0.5rem;
+    border: 2px solid #684F40;
+    box-sizing: content-box;
+}
+
+#products .card{
+    display: none;
+}
+#products .card:first-of-type{
+    display: block;
+}
+
+#products .card > div:first-of-type{
+    height: 25vw;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#products img{
+    position: absolute;
+    top: -20%;
+    width: 100%;
+}
+
+#products .overlay{
+    display: none;
+}
+
+
+/*pagination*/
+
+.pagination ol{
+    text-align: center;
+}
+
+
+
+.pagination ol li{
+    font-size: 0;
+    display: inline-block;
+  
+}
+
+.pagination ol li::after{
+    
+    content:"\25CB";
+    color: #684F40;
+    font-size: 1.8rem;
+        
+}
+
+.pagination ol li:nth-child(1)::after{
+    content:"\25C9";
+    color: #FDB822;
+}
+
+/*CTA-button*/
+
+.pagination a{
+    display: block;
+    text-align: center;
+    font-family: "montserrat-bold", sans-serif;
+    color: #684F40;
+    font-size: 1rem;
+    padding: 0.8em;
+    text-transform: uppercase;
+    border: 1px solid #684F40;
+    margin: 1rem auto 2rem;
+    width: 14rem;
+}
+
+.pagination a:active{
+    background-color: #FDB822;
+    color: #FFFFFF;
+    
+}
+
+
+/*************************
+*****  TESTIMONIALS  *****
+**************************/
+aside {
+    background-color: #FDB822; /*FALLBACK*/
+    background-image: url("../images/bg-small.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+
+}
+
+#products aside .flexContainer{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+#products aside div.flexContainer > div {
+    position:relative;
+    width: 100px;
+    height: 125px;
+    overflow: hidden;
+    border: 2px solid #FFFFFF;
+    transform: rotate(-5deg);
+}
+
+#products aside div.flexContainer img{
+    position: absolute;
+    width: 130%;
+    top: 0;
+    left: -10%;
+    order: -1;
+}
+
+#products cite{
+    order: 0;
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1.4rem;
+    color: #684F40;
+    align-self: flex-end;
+    text-align: right;
+}
+
+#products blockquote{
+    order: 2;
+    font-family: "opensans-semibold", sans-serif;
+    color: #684F40;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+    letter-spacing: 0.06em;
+    text-align: right;
+    margin: 1em 0;
+}
+
+#products ul{
+    order: 2;
+    text-align: right;
+    width: 100%;
+}
+
+#products ul li{
+    display: inline-block;
+    font-size: 0;
+}
+
+#products ul li::after{
+    content:"\25CB";
+    color: #684F40;
+    font-size: 1.8rem;
+}
+
+#products ul li:nth-child(1)::after{
+    content:"\25C9";
+}
+
+/*************************
+*****    SERVICES   ******
+**************************/
+
+#services .card div{
+    padding: 0.5rem 0;
+}
+
+#services .card div:first-of-type{
+    width: 25vw;
+    height: 25vw;
+    border: 1px solid #684F40;
+    border-radius: 50%;
+    margin: 1rem auto;
+}
+
+#services .card div img{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+/*************************
+*****   ABOUT      ******
+**************************/
+
+main section{
+    background-color: #696969;
+}
+
+main section div.flexContainer{
+    justify-content: space-around;
+}
+
+main section div.flexContainer div{
+    padding: 1em 0;
+}
+
+main section div div p:first-of-type{
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #CCCCCC;
+    margin: 1rem 0 0 0;
+}
+
+main section div div p:nth-child(2){
+    color: #CCCCCC;
+    line-height: 1.6em;
+    letter-spacing: 0.04em;
+}
+
+main section div img{
+    display: none;
+}
+
+form label{
+    font-size: 0;
+}
+
+form input{
+    font-family: "montserrat-bold", sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: 1px solid #CCCCCC;
+    background-color: #696969;
+    display: block;
+    width: 100%;
+    box-sizing:border-box;
+    
+}
+
+form input[type="submit"]{
+    background-color: #CCCCCC;
+    color:#696969;
+    
+
+}
+form input[type="submit"]:active{
+    color:#FFFFFF;
+    background-color: #FDB822;
+
+}
+form input[type="email"]{
+    font-family: "opensans-regular", sans-serif;
+    color: #FFFFFF;
+}
+/*************************
+*****   FOOTER      ******
+**************************/
+footer{
+    position: relative;
+    background-image:url("../images/bg-image-logo.png");
+    background-repeat: no-repeat;
+    background-position: 110% -10%;
+    background-size: 50%;
+}
+
+footer h1{
+    display: none;
+
+}
+footer div.flexContainer{
+    justify-content: space-around;
+  
+}
+
+footer div.flexContainer div{
+    padding: 1rem 0;
+}
+
+footer h2{
+    font-family: "montserrat-bold", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0 0 0.5em 0;
+}
+
+footer p{
+    white-space: pre-line;
+    line-height: 1.6em;
+    letter-spacing: 0.04em;
+
+}
+
+footer time{
+    font-family: "opensans-regularitalic", sans-serif;
+}
+
+footer, footer a{
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+footer .naarBoven{
+    display:none;
+}
+/******************************
+****   SOCIAL MEDIA ICONS  ****
+******************************/
+
+
+
+#footerSocMed li{
+    display: inline-block;
+    font-family: "fontawesome";
+    margin: 1em 0.5em 0 0;
+    height: 2rem;
+}
+
+/* Facebook */	
+#footerSocMed li:nth-child(1)::before{ 
+    content: "\f09a"; 
+    padding-right:0.7rem; /* de F is een smalle letter extra padding voor ronde cirkel*/
+    padding-left: 0.7rem;
+}
+
+/* Twitter */	
+#footerSocMed li:nth-child(2)::before{ 
+    content: "\f099"; 
+}
+
+/* RSS */		
+#footerSocMed li:nth-child(3)::before{ 
+    content: "\f09e"; 
+}
+
+/* Pinterest */	
+#footerSocMed li:nth-child(4)::before{ 
+    content: "\f0d2"; 
+}
+
+/* LinkedIn */	
+#footerSocMed li:nth-child(5)::before{ 
+    content: "\f0e1"; 
+}
+
+/* border om de iconen*/
+#footerSocMed li::before{
+    padding: 0.5rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    
+}
+
+/*onzichtbaar maken van de socialmedia link-teksten*/
+#footerSocMed a{
+    font-size: 0;
+    }
+
+
+/**********************
+**** CONTACT INFO  ****
+**********************/
+
+#footerContactUs li{
+    background-repeat: no-repeat;
+    background-size: 1.3rem;
+    text-indent: 2rem;
+    
+
+}
+
+
+
+#footerContactUs a, #footerContactUs li{
+    line-height: 1.8em;
+    letter-spacing: 0.04em;
+
+}
+
+#footerContactUs a:active{
+    color: #FDB822;
+}
+
+/* Bellen */	
+#footerContactUs li:nth-child(1){ 
+    background-image: url("../images/iconen/phone.svg");
+}
+
+/* Adres */	   
+#footerContactUs li:nth-child(2){ 
+    background-image: url("../images/iconen/mail.svg");}
+
+/* E-mail */	
+#footerContactUs li:nth-child(3){ 
+    background-image: url("../images/iconen/locatie.svg");
+}
+
+/* Website */	
+#footerContactUs li:nth-child(4){
+    background-image: url("../images/iconen/wereldbol.svg"); 
+}
+

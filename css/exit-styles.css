@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+body{
+     background-color: #333333;
+}
+
+div.return{
+    width: 100vw;
+    height: 100vh;
+    background-image:url("../images/bg-image-logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+   
+    
+}
+
+
+div.return p, div.return a{
+    font-family: "opensans-light", sans-serif;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    letter-spacing: 0.1em;
+    text-align:center;
+    line-height: 3em;
+    
+    
+    
+}
+
+div.return p:first-of-type{
+    font-size: 1.4rem;
+    padding-top: 5em;
+    
+}
+div.return a{
+    color: #FDB822;
+}
+
+@media screen and (max-width:768px){
+    div.return p, div.return a{
+        font-size: 1rem;
+        
+    }
+
+}

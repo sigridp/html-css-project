@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/************ FONTS ************/
+
+@font-face{
+    font-family: "opensans-regular";
+    src: url("font/opensans-regular.eot");
+    src: url("font/opensans-regular.eot?#iefix") format("embedded-opentype"),
+        url("font/opensans-regular.woff2") format("woff2"),
+        url("font/opensans-regular.woff") format("woff"),
+        url("font/opensans-regular.ttf") format("truetype"),
+        url("font/opensans-regular.svg") format("svg");
+
+}
+
+@font-face{
+    font-family: "opensans-regularitalic";
+    src: url("font/opensans-regularitalic.eot");
+    src: url("font/opensans-regularitalic.eot?#iefix") format("embedded-opentype"),
+        url("font/opensans-regularitalic.woff2") format("woff2"),
+        url("font/opensans-regularitalic.woff") format("woff"),
+        url("font/opensans-regularitalic.ttf") format("truetype"),
+        url("font/opensans-regularitalic.svg") format("svg");
+
+}
+@font-face{
+    font-family: "opensans-light";
+    src: url("font/opensans-light.eot");
+    src: url("font/opensans-light.eot?#iefix") format("embedded-opentype"),
+        url("font/opensans-light.woff2") format("woff2"),
+        url("font/opensans-light.woff") format("woff"),
+        url("font/opensans-light.ttf") format("truetype"),
+        url("font/opensans-light.svg") format("svg");
+
+}
+
+@font-face{
+    font-family: "opensans-bold";
+    src: url("font/opensans-bold.eot");
+    src: url("font/opensans-bold.eot?#iefix") format("embedded-opentype"),
+        url("font/opensans-bold.woff2") format("woff2"),
+        url("font/opensans-bold.woff") format("woff"),
+        url("font/opensans-bold.ttf") format("truetype"),
+        url("font/opensans-bold.svg") format("svg");
+
+}
+
+@font-face{
+    font-family: "opensans-semibold";
+    src: url("font/opensans-semibold.eot");
+    src: url("font/opensans-semibold.eot?#iefix") format("embedded-opentype"),
+        url("font/opensans-semibold.woff2") format("woff2"),
+        url("font/opensans-semibold.woff") format("woff"),
+        url("font/opensans-semibold.ttf") format("truetype"),
+        url("font/opensans-semibold.svg") format("svg");
+
+}
+
+
+
+@font-face{
+    font-family: "montserrat-regular";
+    src: url("font/montserrat-regular.eot");
+    src: url("font/montserrat-regular.eot?#iefix") format("embedded-opentype"),
+        url("font/montserrat-regular.woff2") format("woff2"),
+        url("font/montserrat-regular.woff") format("woff"),
+        url("font/montserrat-regular.ttf") format("truetype"),
+        url("font/montserrat-regular.svg") format("svg");
+
+}
+
+@font-face{
+    font-family: "montserrat-bold";
+    src: url("font/montserrat-bold.eot");
+    src: url("font/montserrat-bold.eot?#iefix") format("embedded-opentype"),
+        url("font/montserrat-bold.woff2") format("woff2"),
+        url("font/montserrat-bold.woff") format("woff"),
+        url("font/montserrat-bold.ttf") format("truetype"),
+        url("font/montserrat-bold.svg") format("svg");
+
+}
+
+@font-face{
+    font-family: "fontawesome";
+    src: url("font/fontawesome-webfont.eot");
+    src: url("font/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+        url("font/fontawesome-webfont.woff2") format("woff2"),
+        url("font/fontawesome-webfont.woff") format("woff"),
+        url("font/fontawesome-webfont.ttf") format("truetype"),
+        url("font/fontawesome-webfont.svg") format("svg");
+}
+
+
+/*********** EINDE FONTS ***************/
